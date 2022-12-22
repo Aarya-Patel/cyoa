@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>{{.Title}}</title>
+</head>
+<body>
+  <div class="container text-white w-screen h-screen mx-auto my-auto px-10 flex flex-col justify-center items-center">
+    <div class="bg-pink-700 flex flex-col p-10 w-1/2 justify-center items-center border-2 rounded-md">
+      <h2 class="text-lg font-bold mb-5">{{.Title}}</h2>
+      <div class="card-content">
+        {{range .Story}}
+          <p class="mb-3">{{.}}</p>
+        {{end}}
+      </div>
+      <div class="card-options">
+        {{range .Options}}
+          <a class="text-cyan-400 mb-2 hover:underline" href="/{{.Arc}}">{{.Text}}</p>
+        {{end}}
+      </div>
+    </div>
+  </div>
+</body>
+</html>
